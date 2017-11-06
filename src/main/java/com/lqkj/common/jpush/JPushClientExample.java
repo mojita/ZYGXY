@@ -1,4 +1,4 @@
-﻿package com.lqkj.common.jpush;
+package com.lqkj.common.jpush;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
