@@ -1,0 +1,33 @@
+spring:
+  thymeleaf:
+    cache: false
+    encoding: utf-8
+    mode: HTML5
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database: postgresql
+  datasource:
+#    username: postgres
+#    password: Sn4y8aW
+#    url: jdbc:postgresql://211.149.169.31:5432/sign_public
+    driver-class-name: org.postgresql.Driver
+    username: root
+    password: 123456
+    url: jdbc:postgresql://localhost:5432/test
+
+server:
+  port: 8089
+#LDAP onfig
+LDAP:
+  BASEDN: dc=authldap,dc=edu,dc=cn                      #LDAP的根DN
+  URL: ldap://10.10.31.14:389/                          #LDAP的连接地址（ldap://ip:port/）
+  PRINCIPAL: uid=ldap_gis,ou=Manager,dc=authldap,dc=edu,dc=cn  #LDAP的连接账号（身份认证管理平台添加的应用账号）
+  PASSWORD: zut_gis_2017@                                 #LDAP的连接账号的密码（身份认证管理平台添加的应用账号的密码）
+mybatis:
+  configuration:
+    cache-enabled: true
+    lazy-loading-enabled: true
+    multiple-result-sets-enabled: true
+    map-underscore-to-camel-case: false
