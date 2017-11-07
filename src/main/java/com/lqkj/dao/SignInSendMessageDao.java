@@ -17,7 +17,7 @@ public interface SignInSendMessageDao {
      * @param message
      */
     @Insert({
-            "INSERT INTO  sign_in_send_message(code,sponsor_id) value(#{message.code},#{message.sponsor_id})",
+            "INSERT INTO sign_in_send_message(code,sponsor_id) values(#{message.code},#{message.sponsor_id})",
     })
     void saveSendMessage(@Param("message")SignInSendMessage message);
 

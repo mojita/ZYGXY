@@ -34,6 +34,7 @@ public class SignInSponsor {
     private String description;         //描述
     private boolean is_open;            //是否开启签到
     private Integer message_status;     //发消息0(全校)1(学生)2(老师)
+    private boolean is_remove;          //是否删除
 
     //TODO 这里还需要加入楼层字段
 
@@ -192,6 +193,14 @@ public class SignInSponsor {
 
     public void setMessage_status(Integer message_status) {
         this.message_status = message_status;
+    }
+
+    public boolean is_remove() {
+        return is_remove;
+    }
+
+    public void setIs_remove(boolean is_remove) {
+        this.is_remove = is_remove;
     }
 
     @Override

@@ -102,4 +102,9 @@ public class Test {
         System.out.println(signInfos.get(0).toString());
         return null;
     }
+
+    @RequestMapping("/index/html")
+    public ModelAndView toIndex() {
+        return new ModelAndView("login/signIn");
+    }
 }

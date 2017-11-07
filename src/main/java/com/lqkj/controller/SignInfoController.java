@@ -4,10 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
@@ -66,5 +63,21 @@ public class SignInfoController {
             messageListBean.addPropertie("page",pageAble.getPage());
         }
         return JSON.toJSONString(messageListBean, SerializerFeature.WriteMapNullValue);
+    }
+
+
+    @RequestMapping("/addSignInfo")
+    public String addInfo(@RequestBody String data) {
+        //TODO 该接口需要获取班级,专业、系,老师需要院系code,这里需要根据coode进行查询添加到info表中
+        String id = null;
+        String name = null;
+        String code = null;
+        String sign_place_name = null;
+        String sign_longitude = null;
+        String sign_latitude = null;
+        String sponsor_id = null;
+
+
+        return null;
     }
 }

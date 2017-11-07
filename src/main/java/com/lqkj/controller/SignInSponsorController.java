@@ -25,13 +25,14 @@ public class SignInSponsorController {
 
     /**
      * 发起签到
+     * 0(代表每天)，1(代表仅一次)，2(代表工作日)，3(代表周末)，4(代表自定义)
      * @param data
      * @return
      */
     @RequestMapping(value = "/sponsor",method = RequestMethod.POST)
     public String sponsorSignIn(@RequestBody String data) {
 
-        //0(代表每天)，1(代表仅一次)，2(代表工作日)，3(代表周末)，4(代表自定义)
+
         MessageBaseBean messageBaseBean = new MessageBaseBean();
 
         SignInSponsor signInSponsor = JSON.parseObject(data,SignInSponsor.class);
@@ -48,12 +49,7 @@ public class SignInSponsorController {
             return JSON.toJSONString(messageBaseBean);
         }
 
-
-        //TODO 这里还要保存提醒信息
-        //需要获取全校师生的接口
-
-        //TODO 保存发起信息,保存个人信息到message表中
-        System.out.println(signInSponsor.toString());
+        //TODO 这里需要进行测试
         signSponsorService.saveSponsor(signInSponsor);
         messageBaseBean.setMessage("success");
         messageBaseBean.setStatus(true);

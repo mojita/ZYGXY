@@ -16,7 +16,7 @@ public class SignInSendMessage {
     @Id
     @GeneratedValue
     private Integer id;         //id
-    private String code;        //学号或工号
+    private String code;          //学号或工号
     private Integer sponsor_id; //发起id
 
     public SignInSendMessage() {}
