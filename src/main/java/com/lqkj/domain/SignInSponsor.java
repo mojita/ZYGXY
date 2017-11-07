@@ -22,7 +22,7 @@ public class SignInSponsor {
     private String sign_in_classify;    //签到分类名
     private String starttime;           //开始时间
     private String endtime;             //结束时间
-    private Integer sign_in_repetition; //重复
+    private Integer sign_in_repetition; //重复0(代表每天)，1(代表仅一次)，2(代表工作日)，3(代表周末)，4(代表自定义)
     private String custom_repetition;   //重复记录字段
     private boolean is_sign_out;        //是否签退
     private Date createtime;            //创建时间

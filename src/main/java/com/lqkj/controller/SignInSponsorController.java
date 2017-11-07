@@ -2,10 +2,7 @@ package com.lqkj.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.alibaba.fastjson.JSON;
 import com.lqkj.common.jsonUtils.MessageBaseBean;
@@ -55,5 +52,37 @@ public class SignInSponsorController {
         messageBaseBean.setStatus(true);
         messageBaseBean.setCode(0);
         return JSON.toJSONString(messageBaseBean);
+    }
+
+
+    @RequestMapping("/sponsor/getList")
+    public String getSponsorList(@RequestParam("code")String code) {
+        MessageBaseBean message = new MessageBaseBean();
+        if(StringUtils.isEmpty(code)) {
+            message.setMessage("参数为空");
+            message.setStatus(false);
+            message.setCode(0);
+        }else {
+            //这里需要获取数据
+        }
+
+        return null;
+    }
+
+    @RequestMapping("/sponsor/close")
+    public String closeSponsor(@RequestParam("code")String code,@RequestParam("id")String id) {
+
+        MessageBaseBean message = new MessageBaseBean();
+        if(StringUtils.isEmpty(code) || StringUtils.isEmpty(id)) {
+            message.setCode(0);
+            message.setStatus(false);
+            message.setMessage("请求参数不能为空");
+        }else {
+
+            message.setCode(0);
+            message.setStatus(true);
+            message.setMessage("success");
+        }
+        return JSON.toJSONString(message);
     }
 }

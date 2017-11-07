@@ -18,4 +18,10 @@ public interface SignInfoService {
      * @return
      */
     List<SignInfo> getSignInfos(String code, int classifyId, PageAble<SignInfo> pageAble);
+
+    /**
+     * 添加SignInfo信息
+     * @param signInfo
+     */
+    void addInfo(SignInfo signInfo);
 }

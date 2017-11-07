@@ -12,4 +12,11 @@ public interface SignSponsorService {
      * @param signInSponsor
      */
     void saveSponsor(SignInSponsor signInSponsor);
+
+    /**
+     * 关闭发起
+     * @param code          工号学号
+     * @param sponsorId     发起id
+     */
+    void closeSponsor(String code,Integer sponsorId);
 }

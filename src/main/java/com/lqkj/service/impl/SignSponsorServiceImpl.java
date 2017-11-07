@@ -102,4 +102,9 @@ public class SignSponsorServiceImpl implements SignSponsorService{
             messageRepository.save(message);
         }
     }
+
+    @Override
+    public void closeSponsor(String code, Integer sponsorId) {
+        
+    }
 }

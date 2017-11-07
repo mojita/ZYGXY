@@ -35,8 +35,18 @@ public class SignInfo {
     private boolean is_leave_early;     //是否早退
     private Integer leave_early_time;   //早退时间
     private Integer sponsor_id;         //发起人id
+    private int is_teacher;             //是否为老师1(老师)2(学生)
+    //TODO 这里增加了一个字段
 
     public SignInfo() {}
+
+    public int getIs_teacher() {
+        return is_teacher;
+    }
+
+    public void setIs_teacher(int is_teacher) {
+        this.is_teacher = is_teacher;
+    }
 
     public Integer getId() {
         return id;
