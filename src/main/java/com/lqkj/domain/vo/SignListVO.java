@@ -21,6 +21,7 @@ public class SignListVO {
     private float _distance;            //距离(离签到人的)
     private String sign_place_name;     //签到地点name
     private boolean is_open;            //是否打开应用
+    private Integer classify_id;        //分类id
 
     public SignListVO() {}
 
@@ -150,5 +151,13 @@ public class SignListVO {
 
     public void setIs_open(boolean is_open) {
         this.is_open = is_open;
+    }
+
+    public Integer getClassify_id() {
+        return classify_id;
+    }
+
+    public void setClassify_id(Integer classify_id) {
+        this.classify_id = classify_id;
     }
 }

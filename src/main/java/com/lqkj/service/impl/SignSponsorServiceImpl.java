@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.lqkj.dao.SignInSendMessageDao;
+import com.lqkj.dao.SignInSponsorDao;
 import com.lqkj.dao.StudentInfoDao;
 import com.lqkj.dao.TeacherInfoDao;
 import com.lqkj.domain.SignInSendMessage;
@@ -39,6 +40,9 @@ public class SignSponsorServiceImpl implements SignSponsorService{
 
     @Autowired
     private MessageRepository messageRepository;
+
+    @Autowired
+    private SignInSponsorDao signInSponsorDao;
 
 
 
@@ -104,7 +108,26 @@ public class SignSponsorServiceImpl implements SignSponsorService{
     }
 
     @Override
-    public void closeSponsor(String code, Integer sponsorId) {
-        
+    public void closeOrStartSponsor(String code, Integer sponsorId,boolean isOpen) {
+        //关闭标签,is_open
+        if(isOpen) {
+            //关闭
+            signInSponsorDao.updateIsOpen(code,sponsorId,false);
+        }else {
+            //开启
+            signInSponsorDao.updateIsOpen(code,sponsorId,true);
+        }
     }
+
+    @Override
+    public void removeSponsor(String code, Integer sponsor, boolean isRemove) {
+        signInSponsorDao.updateIsRemove(isRemove,code,sponsor);
+    }
+
+    @Override
+    public List<SignInSponsor> getSponsorList(String code,Integer classifyId) {
+        return signInSponsorDao.getSponsorListByCode(code,classifyId);
+    }
+
+
 }

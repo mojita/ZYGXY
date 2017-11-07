@@ -54,6 +54,7 @@ public class SignInfoController {
 
         PageAble<SignInfo> pageAble = new PageAble<>(Integer.parseInt(page),Integer.parseInt(pageSize));
         List<SignInfo> signInfos = signInfoService.getSignInfos(code,Integer.parseInt(classify), pageAble);
+        System.out.println(signInfos.toString());
 //        System.out.println(signInfos.get(0));
         //TODO 不进行身份认证(该接口老师和学生都能进行调用)
 
@@ -84,13 +85,15 @@ public class SignInfoController {
             message.setMessage("参数为空");
         }
         SignInfo signInfo = JSON.parseObject(data,SignInfo.class);
+        System.out.println(signInfo.toString());
         if(StringUtils.isEmpty(signInfo.getCode())
-                || StringUtils.isEmpty(signInfo.getName())
                 || StringUtils.isEmpty(signInfo.getSign_place_name())
                 || StringUtils.isEmpty(signInfo.getSponsor_id())
                 || StringUtils.isEmpty(signInfo.getSign_longitude())
                 || StringUtils.isEmpty(signInfo.getSign_latitude())
-                || StringUtils.isEmpty(signInfo.getIs_teacher())) {
+                || StringUtils.isEmpty(signInfo.getIs_teacher())
+                || StringUtils.isEmpty(signInfo.getSign_classify_id())
+                || StringUtils.isEmpty(signInfo.getSign_name())) {
             message.setStatus(false);
             message.setCode(0);
             message.setMessage("参数不能为空");

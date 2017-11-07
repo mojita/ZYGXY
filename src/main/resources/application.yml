@@ -13,9 +13,12 @@ spring:
 #    password: Sn4y8aW
 #    url: jdbc:postgresql://211.149.169.31:5432/sign_public
     driver-class-name: org.postgresql.Driver
-    username: root
-    password: 123456
-    url: jdbc:postgresql://localhost:5432/test
+    username: postgres
+    password: postgres
+    url: jdbc:postgresql://192.168.4.234:5432/sign_public
+#    username: root
+#    password: 123456
+#    url: jdbc:postgresql://localhost:5432/test
 
 server:
   port: 8089
